@@ -1,11 +1,10 @@
 var radius = document.querySelector('#radius');
-var height = document.querySelector('#height');
 var result = document.querySelector('#result');
 var calcButton = document.querySelector('#calcButton');
-function calcVolume(radius, height) {
-    return 1.0 / 3.0 * Math.pow(radius, 2) * Math.PI * height;
+function calcVolume(radius) {
+    return radius * 0.3048;
 }
 calcButton.addEventListener('click', function (event) {
-    var res = calcVolume(+radius.value, +height.value);
+    var res = calcVolume(+radius.value) + " méter";
     result.value = String(res);
 });
